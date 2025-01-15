@@ -1,0 +1,360 @@
+/* Defining root variables for building and window colors */
+:root {
+    --building-color1: #aa80ff; /* Light purple building color */
+    --building-color2: #66cc99; /* Light green building color */
+    --building-color3: #cc6699; /* Light pink building color */
+    --building-color4: #538cc6; /* Light blue building color */
+    --window-color1: #bb99ff;  /* Light purple window color */
+    --window-color2: #8cd9b3;  /* Light green window color */
+    --window-color3: #d98cb3;  /* Light pink window color */
+    --window-color4: #8cb3d9;  /* Light blue window color */
+  }
+  
+  /* General box-sizing rule for all elements */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Body styling to make it take up the full viewport height and prevent overflow */
+  body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  /* Styling for the building containers */
+  .background-buildings, .foreground-buildings {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; /* Align buildings to the bottom */
+    justify-content: space-evenly; /* Space buildings evenly across the container */
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Styling for individual building wrappers */
+  .building-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Styling for the window wrappers inside the buildings */
+  .window-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  /* Sky gradient with a sunny and light blue background */
+  .sky {
+    background: radial-gradient(
+        closest-corner circle at 15% 15%,
+        #ffcf33,       /* yellow sun */
+        #ffcf33 20%,   /* transition to yellow */
+        #ffff66 21%,   /* light yellow sky */
+        #bbeeff 100%   /* blue sky */
+      );
+  }
+  
+  /* BACKGROUND BUILDINGS STYLES */
+  
+  /* bb1 - Basic background building style */
+  .bb1 {
+    width: 10%;
+    height: 70%;
+  }
+  
+  /* Variations of bb1 with different widths for styling */
+  .bb1a {
+    width: 70%;
+  }
+  
+  .bb1b {
+    width: 80%;
+  }
+  
+  .bb1c {
+    width: 90%;
+  }
+  
+  /* bb1d - Building with a gradient from the primary building color to window color */
+  .bb1d {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(
+        var(--building-color1) 50%,  /* Primary building color */
+        var(--window-color1)       /* Transition to window color */
+      );
+  }
+  
+  /* bb1-window - Simulates a window on bb1 with a gradient */
+  .bb1-window {
+    height: 10%;
+    background: linear-gradient(
+        var(--building-color1), /* Primary building color */
+        var(--window-color1)    /* Transition to window color */
+      );
+  }
+  
+  /* bb2 - Another background building with a striped effect */
+  .bb2 {
+    width: 10%;
+    height: 50%;
+  }
+  
+  /* bb2a - Triangle-style bottom with transparent left/right */
+  .bb2a {
+    border-bottom: 5vh solid var(--building-color2);
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
+  }
+  
+  /* bb2b - Alternating building and window stripes */
+  .bb2b {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        var(--building-color2),
+        var(--building-color2) 6%,
+        var(--window-color2) 6%,
+        var(--window-color2) 9%
+      );
+  }
+  
+  /* bb3 - Another background building with striped windows */
+  .bb3 {
+    width: 10%;
+    height: 55%;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--building-color3),
+        var(--building-color3),
+        var(--window-color3) 15%
+      );
+  }
+  
+  /* bb4 - More complex building style with multiple elements */
+  .bb4 {
+    width: 11%;
+    height: 58%;
+  }
+  
+  /* bb4a - Small top section of bb4 with the building color */
+  .bb4a {
+    width: 3%;
+    height: 10%;
+    background-color: var(--building-color4);
+  }
+  
+  /* bb4b - Narrow middle section of bb4 */
+  .bb4b {
+    width: 80%;
+    height: 5%;
+    background-color: var(--building-color4);
+  }
+  
+  /* bb4c - Large bottom section of bb4 */
+  .bb4c {
+    width: 100%;
+    height: 85%;
+    background-color: var(--building-color4);
+  }
+  
+  /* bb4-window - Simulates windows on bb4 */
+  .bb4-window {
+    width: 18%;
+    height: 90%;
+    background-color: var(--window-color4);
+  }
+  
+  /* FOREGROUND BUILDINGS STYLES */
+  
+  /* fb1 - First foreground building */
+  .fb1 {
+    width: 10%;
+    height: 60%;
+  }
+  
+  /* fb1a - Triangle-style bottom for fb1 */
+  .fb1a {
+    border-bottom: 7vh solid var(--building-color4);
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+  }
+  
+  /* fb1b - Top section of fb1 with the building color */
+  .fb1b {
+    width: 60%;
+    height: 10%;
+    background-color: var(--building-color4);
+  }
+  
+  /* fb1c - Vertical stripe pattern on fb1 */
+  .fb1c {
+    width: 100%;
+    height: 80%;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--building-color4),
+        var(--building-color4) 10%,
+        transparent 10%,
+        transparent 15%
+      ),
+      repeating-linear-gradient(
+        var(--building-color4),
+        var(--building-color4) 10%,
+        var(--window-color4) 10%,
+        var(--window-color4) 90%
+      );
+  }
+  
+  /* fb2 - Second foreground building */
+  .fb2 {
+    width: 10%;
+    height: 40%;
+  }
+  
+  /* fb2a - Triangle-style bottom for fb2 */
+  .fb2a {
+    width: 100%;
+    border-bottom: 10vh solid var(--building-color3);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+  }
+  
+  /* fb2b - Main section of fb2 with building color */
+  .fb2b {
+    width: 100%;
+    height: 75%;
+    background-color: var(--building-color3);
+  }
+  
+  /* fb2-window - Simulates windows on fb2 */
+  .fb2-window {
+    width: 22%;
+    height: 100%;
+    background-color: var(--window-color3);
+  }
+  
+  /* fb3 - Third foreground building */
+  .fb3 {
+    width: 10%;
+    height: 35%;
+  }
+  
+  /* fb3a - Top section of fb3 */
+  .fb3a {
+    width: 80%;
+    height: 15%;
+    background-color: var(--building-color1);
+  }
+  
+  /* fb3b - Main section of fb3 */
+  .fb3b {
+    width: 100%;
+    height: 35%;
+    background-color: var(--building-color1);
+  }
+  
+  /* fb3-window - Simulates windows on fb3 */
+  .fb3-window {
+    width: 25%;
+    height: 80%;
+    background-color: var(--window-color1);
+  }
+  
+  /* fb4 - Fourth foreground building with a complex design */
+  .fb4 {
+    width: 8%;
+    height: 45%;
+    position: relative;
+    left: 10%;
+  }
+  
+  /* fb4a - Border design at the top */
+  .fb4a {
+    border-top: 5vh solid transparent;
+    border-left: 8vw solid var(--building-color1);
+  }
+  
+  /* fb4b - Main section of fb4 with building color */
+  .fb4b {
+    width: 100%;
+    height: 89%;
+    background-color: var(--building-color1);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* fb4-window - Circular windows for fb4 */
+  .fb4-window {
+    width: 30%;
+    height: 10%;
+    border-radius: 50%; /* Circular windows */
+    background-color: var(--window-color1);
+    margin: 10%;
+  }
+  
+  /* fb5 - Fifth foreground building with alternating stripes */
+  .fb5 {
+    width: 10%;
+    height: 33%;
+    position: relative;
+    right: 10%;
+    background: repeating-linear-gradient(
+        var(--building-color2),
+        var(--building-color2) 5%,
+        transparent 5%,
+        transparent 10%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        var(--building-color2),
+        var(--building-color2) 12%,
+        var(--window-color2) 12%,
+        var(--window-color2) 44%
+      );
+  }
+  
+  /* fb6 - Sixth foreground building with window patterns */
+  .fb6 {
+    width: 9%;
+    height: 38%;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--building-color3),
+        var(--building-color3) 10%,
+        transparent 10%,
+        transparent 30%
+      ),
+      repeating-linear-gradient(
+        var(--building-color3),
+        var(--building-color3) 10%,
+        var(--window-color3) 10%,
+        var(--window-color3) 30%
+      );
+  }
+  
+  /* Media query to change colors for smaller screens */
+  @media (max-width: 1000px) {
+    :root {
+      --building-color1: #000;
+      --building-color2: #000;
+      --building-color3: #000;
+      --building-color4: #000;
+    }
+  
+    /* Darker sky gradient for smaller screens */
+    .sky {
+      background: radial-gradient(
+          closest-corner circle at 15% 15%,
+          #ccc,       /* Darker sky */
+          #ccc 20%,
+          #445 21%,   /* Darker blue sky */
+          #223 100%   /* Deep blue sky */
+        );
+    }
+  }
+  
